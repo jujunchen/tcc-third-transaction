@@ -1,0 +1,24 @@
+server:
+  port: 8088
+
+spring:
+  application:
+    name: we-third-application
+  # h2 配置  
+  datasource:
+    url: jdbc:h2:file:./we-third
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: 
+  # 开启H2 GUI    
+  h2:
+    console:
+      enabled: true
+  sql:
+    init:
+      mode: ALWAYS
+      schema-locations: classpath:schema.sql     
+  tcc:
+    storage:
+      storage-type: memory
+      domain: TCC:DEVICE:THIRD
