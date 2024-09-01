@@ -1,0 +1,20 @@
+server:
+  port: 8082
+  
+spring:
+  application:
+    name: third2-application
+  # h2 配置  
+  datasource:
+    url: jdbc:h2:file:./third2
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  sql:
+    init:
+      mode: ALWAYS
+      schema-locations: classpath:schema.sql 
+  # 开启H2 GUI    
+  h2:
+    console:
+      enabled: true  
